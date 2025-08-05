@@ -72,103 +72,103 @@ const DigitalIdCard: React.FC<DigitalIdCardProps> = ({ onExpandChange }) => {
     name: "Personal Portfolio",
     description: "My professional portfolio website showcasing my skills, projects, and experience",
     technologies: ["React.js", "Tailwind CSS", "TypeScript"],
-    githubUrl: "https://github.com/laxminivas06/portfolio"
+    githubUrl: ""
   },
   {
     name: "Wisdom Roots Website",
     description: "Official website for Wisdom Roots focusing on practical learning solutions",
     technologies: ["React.js", "Tailwind CSS", "Node.js"],
-    githubUrl: "https://github.com/laxminivas06/wisdom-roots"
+    githubUrl: ""
   },
   {
     name: "Padma Tutorials Website",
     description: "Educational platform website offering comprehensive learning resources",
     technologies: ["React.js", "CSS", "Firebase"],
-    githubUrl: "https://github.com/laxminivas06/padma-tutorials"
+    githubUrl: ""
   },
   {
     name: "Smart N Light Innovation",
     description: "Website for IoT and smart technology solutions company",
     technologies: ["React.js", "Material UI", "Express"],
-    githubUrl: "https://github.com/laxminivas06/smart-light-innovation"
+    githubUrl: ""
   },
   {
     name: "Nivas Editz Website",
     description: "Business website for adhesive products company",
     technologies: ["React.js", "CSS", "Firebase"],
-    githubUrl: "https://github.com/laxminivas06/nivas-adhesive"
+    githubUrl: ""
   },
   {
     name: "Sri Karimalesh Website",
     description: "Client website for spiritual and cultural organization",
     technologies: ["React.js", "Bootstrap", "Node.js"],
-    githubUrl: "https://github.com/laxminivas06/sri-karimalesh"
+    githubUrl: ""
   },
   {
     name: "Dosa Delight Website",
     description: "Restaurant website for Dosa Delight food business",
     technologies: ["HTML5", "CSS3", "JavaScript"],
-    githubUrl: "https://github.com/laxminivas06/dosa-delight"
+    githubUrl: ""
   },
   {
     name: "Virinchi's Website",
     description: "Client website for Virinchis cultural organization",
     technologies: ["React.js", "Tailwind CSS", "Firebase"],
-    githubUrl: "https://github.com/laxminivas06/virinchis"
+    githubUrl: ""
   },
   {
     name: "ID Card Portal",
     description: "Digital ID card generation and management system",
     technologies: ["React.js", "TypeScript", "Node.js"],
-    githubUrl: "https://github.com/laxminivas06/id-card-portal"
+    githubUrl: "https://github.com/laxminivas06/Smart-Card"
   },
   {
     name: "Attendance Management (Offline)",
     description: "Python Flask application for offline attendance tracking",
     technologies: ["Python", "Flask", "SQLite"],
-    githubUrl: "https://github.com/laxminivas06/attendance-offline"
+    githubUrl: ""
   },
   {
     name: "Attendance Management (Online)",
     description: "Web-based attendance system with real-time tracking",
     technologies: ["Python", "Django", "PostgreSQL"],
-    githubUrl: "https://github.com/laxminivas06/attendance-online"
+    githubUrl: "https://github.com/laxminivas06/Attendace-Management-System"
   },
   {
     name: "Event Form",
     description: "General purpose event registration form system",
     technologies: ["HTML5", "CSS3", "JavaScript"],
-    githubUrl: "https://github.com/laxminivas06/event-form"
+    githubUrl: "https://github.com/laxminivas06/Event-Form"
   },
   {
     name: "Club Event Form",
     description: "College club-specific event registration system",
     technologies: ["Python", "Flask", "MySQL"],
-    githubUrl: "https://github.com/laxminivas06/club-event-form"
+    githubUrl: ""
   },
   {
     name: "Universal Club Event Form",
     description: "Multi-club event registration portal for colleges",
     technologies: ["Python", "Django", "PostgreSQL"],
-    githubUrl: "https://github.com/laxminivas06/universal-event-form"
+    githubUrl: ""
   },
   {
     name: "Resume Builder",
     description: "ATS-compliant resume generator with Google Form-like interface",
     technologies: ["Python", "Flask", "Jinja2"],
-    githubUrl: "https://github.com/laxminivas06/resume-builder"
+    githubUrl: "https://github.com/laxminivas06/Resume-Builder"
   },
   {
     name: "Invoice Maker",
     description: "Automated invoice generation system for businesses",
     technologies: ["Python", "Django", "JavaScript"],
-    githubUrl: "https://github.com/laxminivas06/invoice-maker"
+    githubUrl: "https://github.com/laxminivas06/Invoice-Maker"
   },
   {
     name: "Customer Review Portal",
     description: "Platform for collecting and managing customer feedback",
     technologies: ["Python", "Flask", "SQLite"],
-    githubUrl: "https://github.com/laxminivas06/customer-review"
+    githubUrl: ""
   },
   {
     name: "Learn Lab",
@@ -180,41 +180,41 @@ const DigitalIdCard: React.FC<DigitalIdCardProps> = ({ onExpandChange }) => {
     name: "Hospital Management System",
     description: "Complete solution for hospital administration and patient management",
     technologies: ["Python", "Tkinter", "MySQL"],
-    githubUrl: "https://github.com/laxminivas06/hospital-management"
+    githubUrl: "https://github.com/laxminivas06/Woman-Companion"
   },
   {
     name: "Soil Predictor",
     description: "Agricultural tool for soil analysis and graph generation",
     technologies: ["Java",  "MySQL"],
-    githubUrl: "https://github.com/laxminivas06/soil-predictor"
+    githubUrl: ""
   },
   {
     name: "QR Code Generator",
     description: "Tool for generating QR codes from URLs or text",
     technologies: ["Python", "Flask", "qrcode"],
-    githubUrl: "https://github.com/laxminivas06/qr-code-generator"
+    githubUrl: ""
   },
   {
     name: "Women Companion",
     description: "Health tracking application for women's menstrual cycle",
     technologies: ["Python", "Flask", "SQLite"],
-    githubUrl: "https://github.com/laxminivas06/women-companion"
+    githubUrl: "https://github.com/laxminivas06/Woman-Companion"
   },
   {
     name: "Expenses Book",
     description: "Vinayaka Chaturthi expense tracking application",
     technologies: ["Python", "Tkinter", "SQLite"],
-    githubUrl: "https://github.com/laxminivas06/expenses-book"
+    githubUrl: ""
   },
   {
     name: "Smart Message Sender",
     description: "Bulk email messaging system for registered users",
     technologies: ["Python", "Flask", "SMTP"],
-    githubUrl: "https://github.com/laxminivas06/smart-message-sender"
+    githubUrl: ""
   },
   {
     name: "Exam Portal",
-    description: "JWE/NEET/GATE examination clone with scoring system",
+    description: "JEE/NEET/GATE examination clone with scoring system",
     technologies: ["Python", "Django", "PostgreSQL"],
     githubUrl: "https://github.com/laxminivas06/exam-portal"
   },
@@ -222,37 +222,37 @@ const DigitalIdCard: React.FC<DigitalIdCardProps> = ({ onExpandChange }) => {
     name: "EAPCET Rank Predictor",
     description: "Engineering Agriculture Polytech college predictor based on entrance ranks",
     technologies: ["Python", "Flask", "MySQL"],
-    githubUrl: "https://github.com/laxminivas06/epset-rank-predictor"
+    githubUrl: "https://github.com/laxminivas06/Eapcet-Predictor"
   },
   {
     name: "Hackathon Registration Form",
     description: "Custom hackathon registration system alternative to Google Forms",
     technologies: ["Python", "Django", "PostgreSQL"],
-    githubUrl: "https://github.com/laxminivas06/akathon-registration"
+    githubUrl: ""
   },
   {
     name: "Object Detection via AI",
     description: "AI-powered object detection system using computer vision",
     technologies: ["Python", "OpenCV", "TensorFlow"],
-    githubUrl: "https://github.com/laxminivas06/object-detection"
+    githubUrl: ""
   },
   {
     name: "Library Management System",
     description: "Complete library administration tool with Java AWT",
     technologies: ["Java", "AWT", "MySQL"],
-    githubUrl: "https://github.com/laxminivas06/library-management"
+    githubUrl: "https://github.com/laxminivas06/Library-Management-System"
   },
   {
     name: "Smart Rental System",
     description: "Automated rental payment reminder and management system",
     technologies: ["Python", "Flask", "Twilio API"],
-    githubUrl: "https://github.com/laxminivas06/smart-rental-system"
+    githubUrl: ""
   },
   {
     name: "Canteen Mega System",
     description: "Comprehensive canteen management with token and payment system",
     technologies: ["Python", "Django", "PostgreSQL"],
-    githubUrl: "https://github.com/laxminivas06/canteen-system"
+    githubUrl: ""
   }
 ];
 
