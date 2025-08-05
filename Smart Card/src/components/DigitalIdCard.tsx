@@ -87,15 +87,15 @@ const DigitalIdCard: React.FC<DigitalIdCardProps> = ({ onExpandChange }) => {
     githubUrl: "https://github.com/laxminivas06/padma-tutorials"
   },
   {
-    name: "Smart and Light Innovation",
+    name: "Smart N Light Innovation",
     description: "Website for IoT and smart technology solutions company",
     technologies: ["React.js", "Material UI", "Express"],
     githubUrl: "https://github.com/laxminivas06/smart-light-innovation"
   },
   {
-    name: "Nivas Adhesive Website",
+    name: "Nivas Editz Website",
     description: "Business website for adhesive products company",
-    technologies: ["HTML5", "CSS3", "JavaScript"],
+    technologies: ["React.js", "CSS", "Firebase"],
     githubUrl: "https://github.com/laxminivas06/nivas-adhesive"
   },
   {
@@ -111,7 +111,7 @@ const DigitalIdCard: React.FC<DigitalIdCardProps> = ({ onExpandChange }) => {
     githubUrl: "https://github.com/laxminivas06/dosa-delight"
   },
   {
-    name: "Virinchis Website",
+    name: "Virinchi's Website",
     description: "Client website for Virinchis cultural organization",
     technologies: ["React.js", "Tailwind CSS", "Firebase"],
     githubUrl: "https://github.com/laxminivas06/virinchis"
@@ -135,7 +135,7 @@ const DigitalIdCard: React.FC<DigitalIdCardProps> = ({ onExpandChange }) => {
     githubUrl: "https://github.com/laxminivas06/attendance-online"
   },
   {
-    name: "Event Form System",
+    name: "Event Form",
     description: "General purpose event registration form system",
     technologies: ["HTML5", "CSS3", "JavaScript"],
     githubUrl: "https://github.com/laxminivas06/event-form"
@@ -147,7 +147,7 @@ const DigitalIdCard: React.FC<DigitalIdCardProps> = ({ onExpandChange }) => {
     githubUrl: "https://github.com/laxminivas06/club-event-form"
   },
   {
-    name: "Universal Event Form",
+    name: "Universal Club Event Form",
     description: "Multi-club event registration portal for colleges",
     technologies: ["Python", "Django", "PostgreSQL"],
     githubUrl: "https://github.com/laxminivas06/universal-event-form"
@@ -185,7 +185,7 @@ const DigitalIdCard: React.FC<DigitalIdCardProps> = ({ onExpandChange }) => {
   {
     name: "Soil Predictor",
     description: "Agricultural tool for soil analysis and graph generation",
-    technologies: ["Java", "JavaFX", "MySQL"],
+    technologies: ["Java",  "MySQL"],
     githubUrl: "https://github.com/laxminivas06/soil-predictor"
   },
   {
@@ -219,19 +219,19 @@ const DigitalIdCard: React.FC<DigitalIdCardProps> = ({ onExpandChange }) => {
     githubUrl: "https://github.com/laxminivas06/exam-portal"
   },
   {
-    name: "EPSET Rank Predictor",
-    description: "Engineering/Agriculture college predictor based on entrance ranks",
+    name: "EAPCET Rank Predictor",
+    description: "Engineering Agriculture Polytech college predictor based on entrance ranks",
     technologies: ["Python", "Flask", "MySQL"],
     githubUrl: "https://github.com/laxminivas06/epset-rank-predictor"
   },
   {
-    name: "Akathon Registration Form",
+    name: "Hackathon Registration Form",
     description: "Custom hackathon registration system alternative to Google Forms",
     technologies: ["Python", "Django", "PostgreSQL"],
     githubUrl: "https://github.com/laxminivas06/akathon-registration"
   },
   {
-    name: "Object Detection via Camera",
+    name: "Object Detection via AI",
     description: "AI-powered object detection system using computer vision",
     technologies: ["Python", "OpenCV", "TensorFlow"],
     githubUrl: "https://github.com/laxminivas06/object-detection"
