@@ -614,60 +614,73 @@ useEffect(() => {
               </section>
 
               {/* Experience Section - Responsive Layout */}
-              <section className={`transition-all duration-700 ${visibleSections.includes('experience') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <div className="flex items-center mb-4 sm:mb-6">
-                  <div className="p-2 sm:p-3 bg-green-100 rounded-lg sm:rounded-xl mr-3 sm:mr-4">
-                    <Briefcase className="text-green-600 w-4 h-4 sm:w-5 sm:h-5" />
-                  </div>
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">My Startups & Business</h2>
-                </div>
-                <div className="space-y-4 sm:space-y-6">
-                  {experiences.map((exp, index) => (
-                    <div 
-                      key={index} 
-                      className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 p-4 sm:p-6 bg-gradient-to-r from-gray-50 to-blue-50/30 rounded-xl sm:rounded-2xl hover:shadow-md transition-all duration-300 border border-gray-100"
-                    >
-                      <div className="flex-shrink-0">
-                        <div className="relative">
-                          {exp.logo ? (
-                            <img 
-                              src={exp.logo} 
-                              alt={`${exp.organization} logo`}
-                              className="w-12 h-12 sm:w-16 sm:h-16 object-contain rounded-lg bg-white p-1 sm:p-2 border border-gray-200"
-                            />
-                          ) : (
-                            <div className={`p-2 sm:p-3 rounded-lg ${exp.type === 'work' ? 'bg-blue-100' : 'bg-teal-100'}`}>
-                              {exp.type === 'work' ? (
-                                <Building2 className={`${exp.type === 'work' ? 'text-blue-600' : 'text-teal-600'} w-4 h-4 sm:w-5 sm:h-5`} />
-                              ) : (
-                                <GraduationCap className="text-teal-600 w-4 h-4 sm:w-5 sm:h-5" />
-                              )}
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2 mb-1 sm:mb-2">
-                          <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800">
-                            {exp.organization}
-                          </h3>
-                          <div className="flex items-center gap-1 sm:gap-2">
-                            <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-blue-100 text-blue-800 text-xs sm:text-sm rounded-full font-medium">
-                              {exp.type === 'work' ? 'Startup' : 'Education'}
-                            </span>
-                            <span className="flex items-center text-gray-500 text-xs sm:text-sm">
-                              <Calendar className="w-3 h-3 sm:w-4 sm:h-4 mr-0.5 sm:mr-1" />
-                              {exp.period}
-                            </span>
-                          </div>
-                        </div>
-                        <p className="text-blue-600 font-medium mb-1 sm:mb-2 text-sm sm:text-base md:text-lg">{exp.role}</p>
-                        <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base">{exp.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
+<section className={`transition-all duration-700 ${visibleSections.includes('experience') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+  <div className="flex items-center mb-4 sm:mb-6">
+    <div className="p-2 sm:p-3 bg-green-100 rounded-lg sm:rounded-xl mr-3 sm:mr-4">
+      <Briefcase className="text-green-600 w-4 h-4 sm:w-5 sm:h-5" />
+    </div>
+    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">My Startups & Business</h2>
+  </div>
+  <div className="space-y-4 sm:space-y-6">
+    {experiences.map((exp, index) => (
+      <div 
+        key={index} 
+        className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 p-4 sm:p-6 bg-gradient-to-r from-gray-50 to-blue-50/30 rounded-xl sm:rounded-2xl hover:shadow-md transition-all duration-300 border border-gray-100"
+      >
+        <div className="flex-shrink-0">
+          <div className="relative">
+            {exp.logo ? (
+              <img 
+                src={exp.logo} 
+                alt={`${exp.organization} logo`}
+                className="w-12 h-12 sm:w-16 sm:h-16 object-contain rounded-lg bg-white p-1 sm:p-2 border border-gray-200"
+              />
+            ) : (
+              <div className={`p-2 sm:p-3 rounded-lg ${exp.type === 'work' ? 'bg-blue-100' : 'bg-teal-100'}`}>
+                {exp.type === 'work' ? (
+                  <Building2 className={`${exp.type === 'work' ? 'text-blue-600' : 'text-teal-600'} w-4 h-4 sm:w-5 sm:h-5`} />
+                ) : (
+                  <GraduationCap className="text-teal-600 w-4 h-4 sm:w-5 sm:h-5" />
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+        <div className="flex-1">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2 mb-1 sm:mb-2">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800">
+              {exp.organization}
+            </h3>
+            <div className="flex items-center gap-1 sm:gap-2">
+              <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-blue-100 text-blue-800 text-xs sm:text-sm rounded-full font-medium">
+                {exp.type === 'work' ? 'Startup' : 'Education'}
+              </span>
+              <span className="flex items-center text-gray-500 text-xs sm:text-sm">
+                <Calendar className="w-3 h-3 sm:w-4 sm:h-4 mr-0.5 sm:mr-1" />
+                {exp.period}
+              </span>
+            </div>
+          </div>
+          <p className="text-blue-600 font-medium mb-1 sm:mb-2 text-sm sm:text-base md:text-lg">{exp.role}</p>
+          <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base mb-2 sm:mb-3">{exp.description}</p>
+          
+          {/* Added Website Button */}
+          {exp.website && (
+            <a
+              href={exp.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-1 sm:py-2 bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-lg sm:rounded-xl text-xs sm:text-sm font-medium transition-colors duration-200"
+            >
+              <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
+              <span>Visit Website</span>
+            </a>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
 
              {/* Social Links Section - Responsive Grid */}
 <section className={`transition-all duration-700 ${visibleSections.includes('social') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
