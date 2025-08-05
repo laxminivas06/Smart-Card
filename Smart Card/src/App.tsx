@@ -138,12 +138,12 @@ function App() {
               {/* About Section */}
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold text-gray-800 flex items-center">
-                  <Code className="mr-2 text-blue-600" size={18} />
-                  About This Project
-                </h3>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                  Built with React, TypeScript, and Tailwind CSS. Features smooth animations, responsive design, and interactive elements.
-                </p>
+  <Code className="mr-2 text-blue-600" size={18} />
+  About This Digital Card
+</h3>
+<p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+  A modern digital business card that showcases professional information in an interactive format. Features smooth animations, responsive layout for all devices, and engaging elements to connect with visitors.
+</p>
               </div>
               
               {/* Quick Links */}
