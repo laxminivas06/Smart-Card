@@ -3,7 +3,7 @@ import {
   User, MapPin, Briefcase, Calendar, ExternalLink, 
   Github, Linkedin, Mail, Globe, X, Code, 
   Building2, GraduationCap, ChevronRight, Star, 
-  Award, ChevronLeft, Play,Users, Pause
+   ChevronLeft, Play,Users, Pause
 } from 'lucide-react';
 import { Phone, Instagram } from 'lucide-react';
 interface Project {
@@ -113,54 +113,8 @@ const DigitalIdCard: React.FC<DigitalIdCardProps> = ({ onExpandChange }) => {
 
 
   const projects: Project[] = [
-  {
-    name: "Personal Portfolio",
-    description: "My professional portfolio website showcasing my skills, projects, and experience",
-    technologies: ["React.js", "Tailwind CSS", "TypeScript"],
-    githubUrl: ""
-  },
-  {
-    name: "Wisdom Roots Website",
-    description: "Official website for Wisdom Roots focusing on practical learning solutions",
-    technologies: ["React.js", "Tailwind CSS", "Node.js"],
-    githubUrl: ""
-  },
-  {
-    name: "Padma Tutorials Website",
-    description: "Educational platform website offering comprehensive learning resources",
-    technologies: ["React.js", "CSS", "Firebase"],
-    githubUrl: ""
-  },
-  {
-    name: "Smart N Light Innovation",
-    description: "Website for IoT and smart technology solutions company",
-    technologies: ["React.js", "Material UI", "Express"],
-    githubUrl: ""
-  },
-  {
-    name: "Nivas Editz Website",
-    description: "Business website for adhesive products company",
-    technologies: ["React.js", "CSS", "Firebase"],
-    githubUrl: ""
-  },
-  {
-    name: "Sri Karimalesh Website",
-    description: "Client website for spiritual and cultural organization",
-    technologies: ["React.js", "Bootstrap", "Node.js"],
-    githubUrl: ""
-  },
-  {
-    name: "Dosa Delight Website",
-    description: "Restaurant website for Dosa Delight food business",
-    technologies: ["HTML5", "CSS3", "JavaScript"],
-    githubUrl: ""
-  },
-  {
-    name: "Virinchi's Website",
-    description: "Client website for Virinchis cultural organization",
-    technologies: ["React.js", "Tailwind CSS", "Firebase"],
-    githubUrl: ""
-  },
+  
+  
   {
     name: "ID Card Portal",
     description: "Digital ID card generation and management system",
@@ -293,10 +247,53 @@ const DigitalIdCard: React.FC<DigitalIdCardProps> = ({ onExpandChange }) => {
     technologies: ["Python", "Flask", "Twilio API"],
     githubUrl: ""
   },
+
   {
     name: "Canteen Mega System",
     description: "Comprehensive canteen management with token and payment system",
     technologies: ["Python", "Django", "PostgreSQL"],
+    githubUrl: ""
+  },
+  {
+    name: "Wisdom Roots Website",
+    description: "Official website for Wisdom Roots focusing on practical learning solutions",
+    technologies: ["React.js", "Tailwind CSS", "Node.js"],
+    githubUrl: ""
+  },
+  {
+    name: "Padma Tutorials Website",
+    description: "Educational platform website offering comprehensive learning resources",
+    technologies: ["React.js", "CSS", "Firebase"],
+    githubUrl: ""
+  },
+  {
+    name: "Smart N Light Innovation",
+    description: "Website for IoT and smart technology solutions company",
+    technologies: ["React.js", "Material UI", "Express"],
+    githubUrl: ""
+  },
+  {
+    name: "Nivas Editz Website",
+    description: "Business website for adhesive products company",
+    technologies: ["React.js", "CSS", "Firebase"],
+    githubUrl: ""
+  },
+  {
+    name: "Sri Karimalesh Website",
+    description: "Client website for spiritual and cultural organization",
+    technologies: ["React.js", "Bootstrap", "Node.js"],
+    githubUrl: ""
+  },
+  {
+    name: "Dosa Delight Website",
+    description: "Restaurant website for Dosa Delight food business",
+    technologies: ["HTML5", "CSS3", "JavaScript"],
+    githubUrl: ""
+  },
+  {
+    name: "Virinchi's Website",
+    description: "Client website for Virinchis cultural organization",
+    technologies: ["React.js", "Tailwind CSS", "Firebase"],
     githubUrl: ""
   }
 ];
@@ -930,28 +927,55 @@ useEffect(() => {
   </div>
 </section>
 
+      {/* Workshops Section - Full Titles Visible */}
+<section className={`transition-all duration-700 ${visibleSections.includes('mentoring') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+  <div className="flex items-center mb-4 sm:mb-6">
+    <div className="p-2 sm:p-3 bg-yellow-100 rounded-lg sm:rounded-xl mr-3 sm:mr-4">
+      <Users className="text-yellow-600 w-4 h-4 sm:w-5 sm:h-5" />
+    </div>
+    <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Workshops</h2>
+  </div>
+  
+  <div className="grid grid-cols-2 gap-3 sm:gap-6">
+    {mentoringExperiences.map((exp, idx) => (
+      <div key={idx} className="border rounded-lg sm:rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+        {/* Workshop Banner Image */}
+        <div className="relative w-full aspect-[4/3] bg-gray-100 overflow-hidden">
+          <img 
+            src={exp.media.images[0]} // Updated image path
+            alt={exp.title}
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+          />
+        </div>
+        
+        {/* Workshop Content - Full Title Visible */}
+        <div className="p-3 sm:p-4 flex-grow flex flex-col">
+          <div className="flex justify-between items-start gap-1 mb-1">
+            <h3 className="font-bold text-sm sm:text-base text-gray-800 break-words whitespace-normal"> {/* Removed line-clamp */}
+              {exp.title}
+            </h3>
+            <span className="text-xs bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-full whitespace-nowrap shrink-0 ml-1">
+              {exp.date}
+            </span>
+          </div>
+          
+          <p className="text-gray-600 text-xs sm:text-sm line-clamp-3 mb-2">
+            {exp.description}
+          </p>
+          
+          <div className="flex items-center text-xs sm:text-sm text-gray-500 mt-auto">
+            <Users className="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0" />
+            <span>{exp.participants.toLocaleString()} participants</span>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
 
-              {/* New Mentoring Section */}
-              <section className={`transition-all duration-700 ${visibleSections.includes('mentoring') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <div className="flex items-center mb-4 sm:mb-6">
-                  <div className="p-2 sm:p-3 bg-yellow-100 rounded-lg sm:rounded-xl mr-3 sm:mr-4">
-                    <Users className="text-yellow-600 w-4 h-4 sm:w-5 sm:h-5" />
-                  </div>
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">Workshops</h2>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                  {mentoringExperiences.map((exp, idx) => (
-                    <MentoringCard key={idx} experience={exp} />
-                  ))}
-                </div>
-              </section>
-              
-
-
-
-{/* Compact Events Section */}
-<section className={`transition-all duration-700 ${visibleSections.includes('events') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+{/* Mentoring Section - Full Titles Visible */}
+<section className={`transition-all duration-700 mt-8 sm:mt-12 ${visibleSections.includes('events') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
   <div className="flex items-center mb-4 sm:mb-6">
     <div className="p-2 sm:p-3 bg-red-100 rounded-lg sm:rounded-xl mr-3 sm:mr-4">
       <Calendar className="text-red-600 w-4 h-4 sm:w-5 sm:h-5" />
@@ -959,111 +983,122 @@ useEffect(() => {
     <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Mentoring</h2>
   </div>
   
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-7">
+  <div className="grid grid-cols-2 gap-3 sm:gap-6">
     {pastEvents.map((event, idx) => (
-      <div key={idx} className="border rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
-        {/* Single Image Display */}
+      <div key={idx} className="border rounded-lg sm:rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+        {/* Mentoring Banner Image */}
         <div className="relative w-full aspect-[4/3] bg-gray-100 overflow-hidden">
           <img 
-            src={event.photos[0]} // Using first photo only (remove slider)
+            src={event.photos[0]} 
             alt={event.name}
             className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
             loading="lazy"
           />
         </div>
         
-        {/* Event Details */}
-        <div className="p-4 sm:p-5 flex-grow">
-          <div className="flex justify-between items-start mb-2">
-            <h3 className="font-bold text-lg sm:text-xl text-gray-800 line-clamp-1">{event.name}</h3>
-            <span className="text-xs sm:text-sm bg-red-100 text-red-800 px-2.5 py-1 rounded-full whitespace-nowrap ml-2">
+        {/* Mentoring Content - Full Title Visible */}
+        <div className="p-3 sm:p-4 flex-grow flex flex-col">
+          <div className="flex justify-between items-start gap-1 mb-1">
+            <h3 className="font-bold text-sm sm:text-base text-gray-800 break-words whitespace-normal"> {/* Removed line-clamp */}
+              {event.name}
+            </h3>
+            <span className="text-xs bg-red-100 text-red-800 px-1.5 py-0.5 rounded-full whitespace-nowrap shrink-0 ml-1">
               {event.date}
             </span>
           </div>
           
-          <p className="text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">{event.description}</p>
+          <p className="text-gray-600 text-xs sm:text-sm line-clamp-3 mb-2">
+            {event.description}
+          </p>
           
-          <div className="flex items-center text-sm sm:text-base text-gray-500">
-            <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 flex-shrink-0" />
+          <div className="flex items-center text-xs sm:text-sm text-gray-500 mt-auto">
+            <MapPin className="w-3 h-3 sm:w-4 sm:h-4 mr-1 flex-shrink-0" />
             <span className="truncate">{event.location}</span>
           </div>
-          
-          {/* Participant Count */}
-          {event.participants && (
-            <div className="flex items-center text-sm sm:text-base text-gray-500 mt-2">
-              <Users className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 flex-shrink-0" />
-              <span>{event.participants.toLocaleString()} participants</span>
-            </div>
-          )}
         </div>
       </div>
     ))}
   </div>
-</section>
+</section>       
 
-             {/* Social Links Section - Responsive Grid */}
-<section className={`transition-all duration-700 ${visibleSections.includes('social') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+         {/* Centered Social Links - Compact Single Line */}
+<section className={`transition-all duration-700 ${visibleSections.includes('social') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} flex flex-col items-center`}>
   <div className="flex items-center mb-4 sm:mb-6">
-    <div className="p-2 sm:p-3 bg-indigo-100 rounded-lg sm:rounded-xl mr-3 sm:mr-4">
-      <Globe className="text-indigo-600 w-4 h-4 sm:w-5 sm:h-5" />
-    </div>
-    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">Let's Connect</h2>
+   
+    <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Let's Connect</h2>
   </div>
-  <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
-    <a 
-      href={`https://github.com/${personalInfo.github}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center gap-2 sm:gap-3 bg-gray-900 text-white px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl hover:bg-gray-800 transition-all duration-300 text-sm sm:text-base"
-    >
-      <Github className="w-3 h-3 sm:w-4 sm:h-4" />
-      <span>GitHub</span>
-    </a>
+  
+  <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4">
+    {/* LinkedIn */}
     <a 
       href={personalInfo.linkedin}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-2 sm:gap-3 bg-blue-600 text-white px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl hover:bg-blue-700 transition-all duration-300 text-sm sm:text-base"
+      className="flex items-center justify-center p-3 sm:p-3.5 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-300 w-10 h-10 sm:w-12 sm:h-12"
+      aria-label="LinkedIn"
     >
-      <Linkedin className="w-3 h-3 sm:w-4 sm:h-4" />
-      <span>LinkedIn</span>
+      <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
     </a>
+
+    {/* GitHub */}
     <a 
-      href={`mailto:${personalInfo.email}`}
-      className="flex items-center gap-2 sm:gap-3 bg-teal-600 text-white px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl hover:bg-teal-700 transition-all duration-300 text-sm sm:text-base"
+      href={`https://github.com/${personalInfo.github}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center justify-center p-3 sm:p-3.5 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all duration-300 w-10 h-10 sm:w-12 sm:h-12"
+      aria-label="GitHub"
     >
-      <Mail className="w-3 h-3 sm:w-4 sm:h-4" />
-      <span>Email</span>
+      <Github className="w-5 h-5 sm:w-6 sm:h-6" />
     </a>
-    <a 
-      href={`tel:+919059160424`}
-      className="flex items-center gap-2 sm:gap-3 bg-green-600 text-white px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl hover:bg-green-700 transition-all duration-300 text-sm sm:text-base"
-    >
-      <Phone className="w-3 h-3 sm:w-4 sm:h-4" />
-      <span>Call Me</span>
-    </a>
+
+ {/* Portfolio (Conditional) */}
     {personalInfo.portfolio && (
       <a 
         href={personalInfo.portfolio}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 text-sm sm:text-base"
+        className="flex items-center justify-center p-3 sm:p-3.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full hover:from-purple-700 hover:to-pink-700 transition-all duration-300 w-10 h-10 sm:w-12 sm:h-12"
+        aria-label="Portfolio"
       >
-        <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
-        <span>Portfolio</span>
+        <Globe className="w-5 h-5 sm:w-6 sm:h-6" />
       </a>
     )}
+
+
+    {/* Instagram */}
     <a 
       href="https://www.instagram.com/laxminivasmorishetty/"
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-pink-500 to-orange-500 text-white px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl hover:from-pink-600 hover:to-orange-600 transition-all duration-300 text-sm sm:text-base"
+      className="flex items-center justify-center p-3 sm:p-3.5 bg-gradient-to-r from-pink-500 to-orange-500 text-white rounded-full hover:from-pink-600 hover:to-orange-600 transition-all duration-300 w-10 h-10 sm:w-12 sm:h-12"
+      aria-label="Instagram"
     >
-      <Instagram className="w-3 h-3 sm:w-4 sm:h-4" />
-      <span>Instagram</span>
+      <Instagram className="w-5 h-5 sm:w-6 sm:h-6" />
     </a>
+    
+
+    {/* Email */}
+    <a 
+      href={`mailto:${personalInfo.email}`}
+      className="flex items-center justify-center p-3 sm:p-3.5 bg-teal-600 text-white rounded-full hover:bg-teal-700 transition-all duration-300 w-10 h-10 sm:w-12 sm:h-12"
+      aria-label="Email"
+    >
+      <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
+    </a>
+
+    {/* Call Me */}
+    <a 
+      href={`tel:+919059160424`}
+      className="flex items-center justify-center p-3 sm:p-3.5 bg-green-600 text-white rounded-full hover:bg-green-700 transition-all duration-300 w-10 h-10 sm:w-12 sm:h-12"
+      aria-label="Call Me"
+    >
+      <Phone className="w-5 h-5 sm:w-6 sm:h-6" />
+    </a>
+
+   
+
   </div>
-</section>
+</section>    
             </div>
           </div>
         </div>
