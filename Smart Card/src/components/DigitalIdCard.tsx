@@ -950,6 +950,57 @@ useEffect(() => {
 
 
 
+{/* Compact Events Section */}
+<section className={`transition-all duration-700 ${visibleSections.includes('events') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+  <div className="flex items-center mb-4 sm:mb-6">
+    <div className="p-2 sm:p-3 bg-red-100 rounded-lg sm:rounded-xl mr-3 sm:mr-4">
+      <Calendar className="text-red-600 w-4 h-4 sm:w-5 sm:h-5" />
+    </div>
+    <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Mentoring</h2>
+  </div>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-7">
+    {pastEvents.map((event, idx) => (
+      <div key={idx} className="border rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+        {/* Single Image Display */}
+        <div className="relative w-full aspect-[4/3] bg-gray-100 overflow-hidden">
+          <img 
+            src={event.photos[0]} // Using first photo only (remove slider)
+            alt={event.name}
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+          />
+        </div>
+        
+        {/* Event Details */}
+        <div className="p-4 sm:p-5 flex-grow">
+          <div className="flex justify-between items-start mb-2">
+            <h3 className="font-bold text-lg sm:text-xl text-gray-800 line-clamp-1">{event.name}</h3>
+            <span className="text-xs sm:text-sm bg-red-100 text-red-800 px-2.5 py-1 rounded-full whitespace-nowrap ml-2">
+              {event.date}
+            </span>
+          </div>
+          
+          <p className="text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">{event.description}</p>
+          
+          <div className="flex items-center text-sm sm:text-base text-gray-500">
+            <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 flex-shrink-0" />
+            <span className="truncate">{event.location}</span>
+          </div>
+          
+          {/* Participant Count */}
+          {event.participants && (
+            <div className="flex items-center text-sm sm:text-base text-gray-500 mt-2">
+              <Users className="w-4 h-4 sm:w-5 sm:h-5 mr-1.5 flex-shrink-0" />
+              <span>{event.participants.toLocaleString()} participants</span>
+            </div>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
              {/* Social Links Section - Responsive Grid */}
 <section className={`transition-all duration-700 ${visibleSections.includes('social') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
   <div className="flex items-center mb-4 sm:mb-6">
