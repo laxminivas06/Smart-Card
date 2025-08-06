@@ -858,7 +858,7 @@ useEffect(() => {
                 </div>
               </section>
 
-              {/* Experience Section - Responsive Layout */}
+         {/* Experience Section - Responsive Grid Layout */}
 <section className={`transition-all duration-700 ${visibleSections.includes('experience') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
   <div className="flex items-center mb-4 sm:mb-6">
     <div className="p-2 sm:p-3 bg-green-100 rounded-lg sm:rounded-xl mr-3 sm:mr-4">
@@ -866,22 +866,28 @@ useEffect(() => {
     </div>
     <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">My Startups & Business</h2>
   </div>
-  <div className="space-y-4 sm:space-y-6">
+  
+  {/* Responsive Grid Layout */}
+  {/* - 1 column on smallest mobile (under 400px) */}
+  {/* - 2 columns from 400px to tablet */}
+  {/* - 3 columns from tablet to desktop */}
+  {/* - 4 columns on large desktop */}
+  <div className="grid grid-cols-1 min-[400px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
     {experiences.map((exp, index) => (
       <div 
         key={index} 
-        className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 p-4 sm:p-6 bg-gradient-to-r from-gray-50 to-blue-50/30 rounded-xl sm:rounded-2xl hover:shadow-md transition-all duration-300 border border-gray-100"
+        className="flex flex-col p-4 sm:p-5 bg-gradient-to-r from-gray-50 to-blue-50/30 rounded-xl sm:rounded-2xl hover:shadow-md transition-all duration-300 border border-gray-100 h-full"
       >
-        <div className="flex-shrink-0">
-          <div className="relative">
+        <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
+          <div className="flex-shrink-0">
             {exp.logo ? (
               <img 
                 src={exp.logo} 
                 alt={`${exp.organization} logo`}
-                className="w-12 h-12 sm:w-16 sm:h-16 object-contain rounded-lg bg-white p-1 sm:p-2 border border-gray-200"
+                className="w-10 h-10 sm:w-12 sm:h-12 object-contain rounded-lg bg-white p-1 border border-gray-200"
               />
             ) : (
-              <div className={`p-2 sm:p-3 rounded-lg ${exp.type === 'work' ? 'bg-blue-100' : 'bg-teal-100'}`}>
+              <div className={`p-2 sm:p-2.5 rounded-lg ${exp.type === 'work' ? 'bg-blue-100' : 'bg-teal-100'}`}>
                 {exp.type === 'work' ? (
                   <Building2 className={`${exp.type === 'work' ? 'text-blue-600' : 'text-teal-600'} w-4 h-4 sm:w-5 sm:h-5`} />
                 ) : (
@@ -890,34 +896,38 @@ useEffect(() => {
               </div>
             )}
           </div>
-        </div>
-        <div className="flex-1">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2 mb-1 sm:mb-2">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800">
+          <div>
+            <h3 className="text-base sm:text-lg font-semibold text-gray-800 line-clamp-1">
               {exp.organization}
             </h3>
-            <div className="flex items-center gap-1 sm:gap-2">
-              <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-blue-100 text-blue-800 text-xs sm:text-sm rounded-full font-medium">
-                {exp.type === 'work' ? 'Startup' : 'Education'}
-              </span>
-              <span className="flex items-center text-gray-500 text-xs sm:text-sm">
-                <Calendar className="w-3 h-3 sm:w-4 sm:h-4 mr-0.5 sm:mr-1" />
-                {exp.period}
-              </span>
-            </div>
+            <p className="text-blue-600 font-medium text-sm sm:text-base">{exp.role}</p>
           </div>
-          <p className="text-blue-600 font-medium mb-1 sm:mb-2 text-sm sm:text-base md:text-lg">{exp.role}</p>
-          <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base mb-2 sm:mb-3">{exp.description}</p>
+        </div>
+        
+        <div className="flex flex-col flex-grow">
+          <div className="flex items-center gap-2 mb-2 sm:mb-3">
+            <span className="px-1.5 py-0.5 bg-blue-100 text-blue-800 text-xs rounded-full font-medium">
+              {exp.type === 'work' ? 'Startup' : 'Education'}
+            </span>
+            <span className="flex items-center text-gray-500 text-xs">
+              <Calendar className="w-3 h-3 mr-1" />
+              {exp.period}
+            </span>
+          </div>
           
-          {/* Added Website Button */}
+          <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3 flex-grow">
+            {exp.description}
+          </p>
+          
+          {/* Website Button */}
           {exp.website && (
             <a
               href={exp.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-1 sm:py-2 bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-lg sm:rounded-xl text-xs sm:text-sm font-medium transition-colors duration-200"
+              className="inline-flex items-center justify-center gap-1 px-3 py-1.5 bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-lg text-xs font-medium transition-colors duration-200 w-full"
             >
-              <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
+              <ExternalLink className="w-3 h-3" />
               <span>Visit Website</span>
             </a>
           )}
@@ -926,6 +936,7 @@ useEffect(() => {
     ))}
   </div>
 </section>
+   
 
       {/* Workshops Section - Full Titles Visible */}
 <section className={`transition-all duration-700 ${visibleSections.includes('mentoring') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
