@@ -3,7 +3,7 @@ import {
   User, MapPin, Briefcase, Calendar, ExternalLink, 
   Github, Linkedin, Mail, Globe, X, Code, 
   Building2, GraduationCap, ChevronRight, Star, 
-  Award, ChevronLeft, Play, Pause
+  Award, ChevronLeft, Play,Users, Pause
 } from 'lucide-react';
 import { Phone, Instagram } from 'lucide-react';
 interface Project {
@@ -15,6 +15,49 @@ interface Project {
 interface DigitalIdCardProps {
   onExpandChange: (isExpanded: boolean) => void;
 }
+
+interface MentoringExperience {
+  title: string;
+  description: string;
+  participants: number;
+  date: string;
+  media: {
+    images: string[];
+    videos?: string[];
+  };
+}
+
+interface Event {
+  name: string;
+  date: string;
+  description: string;
+  location: string;
+  participants?: number;
+  photos: string[];
+  video?: string;
+}
+
+// Add these new interfaces
+interface MentoringExperience {
+  title: string;
+  description: string;
+  participants: number;
+  date: string;
+  media: {
+    images: string[];
+    videos?: string[];
+  };
+}
+
+interface Event {
+  name: string;
+  date: string;
+  description: string;
+  location: string;
+  photos: string[];
+  video?: string;
+}
+
 
 interface Experience {
   organization: string;
@@ -66,6 +109,8 @@ const DigitalIdCard: React.FC<DigitalIdCardProps> = ({ onExpandChange }) => {
     linkedin: "https://in.linkedin.com/in/laxmi-nivas-morishetty-02468m",
     portfolio: "https://laxminivasmorishetty.netlify.app"
   };
+
+
 
   const projects: Project[] = [
   {
@@ -296,7 +341,128 @@ const DigitalIdCard: React.FC<DigitalIdCardProps> = ({ onExpandChange }) => {
     }
   ];
 
+    // Add mentoring data
+  const mentoringExperiences: MentoringExperience[] = [
+    
+    {
+      title: "Web Development in 18 Days",
+      description: "Web Development in 18 Days",
+      participants: 100,
+      date: "March 2024",
+      media: {
+        images: [
+         
+          "/uploads/mentoring/pt2.png"
+        ]
+      }
+    },
+    {
+      title: "5-Day HTML5 Bootcamp",
+      description: "Fundamentals of modern HTML5",
+      participants: 252,
+      date: "February 2024",
+      media: {
+        images: [
+          "/uploads/mentoring/pt1.png"
+      
+        ]
+      }
+    },
+    {
+      title: "5-Day Python Bootcamp",
+    description: "Introduction to Python programming for beginners",
+    participants: 155,
+    date: "January 2024",
+      media: {
+        images: [
+         
+          "/uploads/mentoring/pt3.png"
+        ]
+      }
+    }
+  ];
+
+  // Add events data
+  const pastEvents: Event[] = [
+    
+    {
+      name: "School Mentorship - Basham Bloom's",
+      date: "February 2025",
+      description: "Conducted sessions to innovate and teach new skills to students",
+      location: "Tukkuguda,Hyderabad",
+      participants: 450,
+      photos: [
+        "/uploads/events/main1.jpeg",
+        "/uploads/events/main2.jpeg"
+      ],
+      
+    },
+    {
+      name: "School Mentorship - Academic Heights",
+      date: "July 2025",
+      description: "Skill development workshops for high school students",
+      location: "Badangpet,Hyderabad",
+      participants: 300,
+      photos: [
+        "/uploads/events/jee2.jpeg",
+        "/uploads/events/jee2.jpeg"
+        
+      ],
+      
+    }
   
+  ];
+
+
+    // Add MentoringCard component
+  const MentoringCard = ({ experience }: { experience: MentoringExperience }) => {
+    const [currentImage, setCurrentImage] = useState(0);
+
+    return (
+      <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+        <div className="p-4 sm:p-6">
+          <h3 className="text-xl font-bold text-gray-800 mb-2">{experience.title}</h3>
+          <p className="text-gray-600 mb-4">{experience.description}</p>
+          
+          <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+            <span>{experience.participants}+ participants</span>
+            <span>{experience.date}</span>
+          </div>
+
+          {/* Image Gallery */}
+          <div className="relative h-48 sm:h-64 bg-gray-100 rounded-lg overflow-hidden mb-4">
+            <img 
+              src={experience.media.images[currentImage]} 
+              alt={experience.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1">
+              {experience.media.images.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentImage(idx)}
+                  className={`w-2 h-2 rounded-full ${currentImage === idx ? 'bg-blue-600' : 'bg-gray-300'}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Video Embed */}
+          {experience.media.videos && (
+            <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden mb-4">
+              <iframe 
+                src={experience.media.videos[0]} 
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  };
+
 useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -364,6 +530,88 @@ useEffect(() => {
       onExpandChange(false);
     }, 100);
   };
+
+  // Add EventCard component
+  const EventCard = ({ event }: { event: Event }) => {
+    const [showVideo, setShowVideo] = useState(false);
+
+    return (
+      <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+        <div className="p-4 sm:p-6">
+          <h3 className="text-xl font-bold text-gray-800 mb-1">{event.name}</h3>
+          <div className="flex items-center text-sm text-gray-500 mb-3">
+            <MapPin className="w-4 h-4 mr-1" />
+            <span>{event.location}</span>
+            <span className="mx-2">•</span>
+            <Calendar className="w-4 h-4 mr-1" />
+            <span>{event.date}</span>
+          </div>
+          
+          <p className="text-gray-600 mb-4">{event.description}</p>
+          
+          {/* Photo Gallery */}
+          <div className="grid grid-cols-2 gap-2 mb-4">
+            {event.photos.slice(0, 2).map((photo, idx) => (
+              <div key={idx} className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
+                <img 
+                  src={photo} 
+                  alt={`${event.name} ${idx+1}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+          
+          {/* Video Preview */}
+          {event.video && (
+            <div className="relative aspect-video bg-gray-100 rounded-lg overflow-hidden">
+              {showVideo ? (
+                <iframe 
+                  src={event.video} 
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              ) : (
+                <>
+                  <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                    <button 
+                      onClick={() => setShowVideo(true)}
+                      className="bg-white/80 hover:bg-white p-3 rounded-full transition-all"
+                    >
+                      <Play className="text-blue-600 w-6 h-6" />
+                    </button>
+                  </div>
+                  <img 
+                    src={`https://img.youtube.com/vi/${event.video.split('/').pop()}/hqdefault.jpg`} 
+                    alt={`${event.name} video thumbnail`}
+                    className="w-full h-full object-cover"
+                  />
+                </>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  };
+
+
+   // Update visibleSections effect to include new sections
+  useEffect(() => {
+    if (isExpanded) {
+      setIsAnimating(true);
+      const sections = ['about', 'projects', 'experience', 'mentoring', 'events', 'social'];
+      sections.forEach((section, index) => {
+        setTimeout(() => {
+          setVisibleSections(prev => [...prev, section]);
+        }, index * 150);
+      });
+      setTimeout(() => setIsAnimating(false), 800);
+    } else {
+      setVisibleSections([]);
+    }
+  }, [isExpanded]);
 
    return (
     <div className="relative w-full">
@@ -681,6 +929,26 @@ useEffect(() => {
     ))}
   </div>
 </section>
+
+
+              {/* New Mentoring Section */}
+              <section className={`transition-all duration-700 ${visibleSections.includes('mentoring') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                <div className="flex items-center mb-4 sm:mb-6">
+                  <div className="p-2 sm:p-3 bg-yellow-100 rounded-lg sm:rounded-xl mr-3 sm:mr-4">
+                    <Users className="text-yellow-600 w-4 h-4 sm:w-5 sm:h-5" />
+                  </div>
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">Workshops</h2>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                  {mentoringExperiences.map((exp, idx) => (
+                    <MentoringCard key={idx} experience={exp} />
+                  ))}
+                </div>
+              </section>
+              
+
+
 
              {/* Social Links Section - Responsive Grid */}
 <section className={`transition-all duration-700 ${visibleSections.includes('social') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
